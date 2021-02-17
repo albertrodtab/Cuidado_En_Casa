@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alberto Rodríguez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../StarUp/CSS/alberto_estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,600;1,400&family=Nerko+One&display=swap" rel="stylesheet">
+    <title>Cuidado en Casa</title>
+</head>
+<body>
+    <!-- Estableczo un header en donde introducco el logo y el menu con los botones de acceso a las distintas páginas del sitio. -->
+    <header>
+        <nav class="menu-navegacion contenedor">
+            <div class="logo">
+                <img src="../StarUp/imagenes/logos/logo mediano.png" alt="Logo Empresa">
+            </div>
+            <div class="enlaces">
+                <ul>
+                    <li> <a href="https://proyectocuidar.com/quienes-somos/">Quienes Somos</a></li>
+                    <li> <a href="#servicios">Servicios</a></li>
+                    <li> <a href="#productos">Productos</a></li>
+                    <li> <a href="https://proyectocuidar.com/avisolegal_2/">Política Privacidad</a></li>
+                    <li> <a href="https://unenfermerocurioso.wordpress.com/">Blog</a></li>
+                    <li> <a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+    <!-- En el cuerpo principal establezco 3 secciones diferenciadas -->
+    <!-- En la primera incluiremos el nombre y unos botones para que la gente pueda 
+        interactuar y conocernos desde este punto -->
+        <section class="contenedor-principal">
+            <div class="texto-principal contenedor">
+                <h1>Atención y Cuidados de Enfermería a Domicilio</h1>
+                <h2>Los Mejores Cuidados sin Salir de Casa</h2>
+                <a href="https://proyectocuidar.com/quienes-somos/">Quienes Somos</a>
+                <a href="https://www.asepeyo.es/trabaja-en-asepeyo/">Trabaja con Nosotros</a>
+                
+            </div>
+        </section> 
+        <!-- Está segunda sección muestra en un slider los principales servicios en imagenes 
+        e incluye también tres zonas donde resumimos las lineas de acción de la empresa. así como un CTA
+        para que la gente pueda solicitar nuestros servicios. -->
+        <section>
+        <h2 class="titulo-seccion">Nuestros Servicios</h2>
+        <div class="contenedor galeria">
+            <a id="servicios"></a>
+            <div class="slider"> 
+                <ul>
+                    <li id=slide1><img src="../StarUp/imagenes/female-nurse-elbow-touching-old-man-during-pandemic.jpg" alt="Fotos de nuestros servicios"></li>
+                    <li id=slide2><img src="../StarUp/imagenes/doctor-measures-the-blood-sugar-level-of-the-patient.jpg" alt="Fotos de nuestros servicios"></li>
+                    <li id=slide3><img src="../StarUp/imagenes/nurse-and-senior-woman-during-check-up-at-nursing-home.jpg" alt="Fotos de nuestros servicios"></li>
+                    <li id=slide4><img src="../StarUp/imagenes/close-up-of-doctor-s-hand-wearing-blue-gloves-giving-syringe-on-patient-s-arm.jpg" alt="Fotos de nuestros servicios"></li>
+                </ul>
+            </div>
+            <!--Esta parte sería para establecer un menu y pasar las imagenes con otro tipo de slider-->
+            <!-- <nav class="slider-nav">
+                <nav class="menu-navegacion-slider">
+                    <div class="enlaces">
+                        <li><a href="#slide1">1</a></li>
+                        <li><a href="#slide2">2</a></li>
+                        <li><a href="#slide3">3</a></li>
+                    </div>
+                </nav>
+            </nav>                          -->
+        </div>
+        <!-- resumen de nuestros servicios, anuncio de nuestro servicio 24 hras y CTA para contatar y consultarnos.-->
+            <div class="contenedor contenedor-secundario">
+                <a id="quienessomos"></a>
+                <div class="texto-secundario1">
+                    <h2>Cuidados Profesionales en tu domicilio.</h2>
+                    <p>Trabajamos para prestar los cuidados más profesionales en tu domicilio para favorecer tu bienestar.</p>
+                    <p>Somos muy conscientes de los beneficios que reporta a la recuperación el entorno familiar.</p>
+                    <a href="https://proyectocuidar.com/quienes-somos/"><img src="../StarUp/imagenes/woman-doctor-Pequeña.jpg" alt="Nuestro Equipo Humano"></a>
+                </div>
+                <div class="texto-secundario2">
+                    <h2>Cuidamos de su Salud 24 hrs los 365 días</h2>
+                    <p>Servicio de atención telefonica atendido por profesionales para resolver todas tus dudas o inquietudes.</p>
+                    <a href="https://unenfermerocurioso.wordpress.com/"><img src="../StarUp/imagenes/DUE24_hrs_pequeña.jpg" alt="Logo servicio 24 horas"></a>
+                </div>
+                <a id="contacto"></a>
+                <div class="texto-secundario3">
+                    <div class="textos">
+                        <h2>Contacto</h2>
+                        <p>Contactaremos en menos de 24 hrs.</p>
+                    </div>  
+                    <div class="formulario">   
+                        <form action="#" target="#" method="post" name="formDatosPersonales">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre"/>
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" name="apellidos" id="apellidos" placeholder="1r Apellido"/>
+                            <label for="telefono" >Telf.</label>
+                            <input type="tel" name="telefono" id="telefono" placeholder="Teléfono" required />
+                            <label for="email" >Email</label>
+                            <input type="email" name="email" id="email" placeholder="Email" required />
+                            <label for="asunto">Asunto</label>
+                            <input type ="text" name="asunto" id="asunto" placeholder="Motivo de la consulta" required />
+                            <label for="mensaje">Mensaje</label>
+                            <textarea name="mensaje" id="mensaje" placeholder="Describe brevemente en menos de 300 carácteres" maxlength="300" required ></textarea>
+                            <input type="submit" name="enviar" value="ENVIAR DATOS"/>
+                        </form>
+                    </div> 
+                </div>
+            </div>
+        </section>
+        <!-- En esta última sección hacemos recomendación de los productos más adecuados y que recomendamos para
+        que nuestros pacientes tengan en su domicilio. -->
+        <section class="contenedor">
+            <a id="productos"></a>
+            <h2 class="titulo-seccion">Productos Destacados</h2>
+            <div class="contenedor-tienda">
+                <div class="tabla1">
+                    <a href="https://www.quirumed.com/es/tensiometro-omron-m2-basic-hem-7121j-e.html?sid=84013"><img src="../StarUp/imagenes/digital-automatic-blood-pressure-monitor-on-white.jpg" alt="Tensiometro"></a>
+                </div>
+                <div class="tabla2">
+                    <a href="https://www.quirumed.com/es/botiquin-maletin-m-1.html?sid=51050"><img src="../StarUp/imagenes/first-aid-kit-on-white-table-full-set-of-emergency-medicine-medication-for-giving-first-aid-to-sick-or-injured-person-on-white-background.jpg" alt="Botiquín primeros auxilios"></a>
+                </div>
+                <div class="tabla3">
+                    <a href="https://www.quirumed.com/es/covid-19"><img src="../StarUp/imagenes/anti-virus-recorte-protection-kit-on-blue-background-mask-rubber-gloves-hand-sanitizer-bottles-antiseptic-gel.jpg" alt="Kit basico Covid-19"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Inclumos un footer en donde indicaresmos nuestra dirección y las redes sociales en donde podran encontrarnos. -->
+    <footer>
+        <div class="pie-pagina">
+            <address>
+                <div class="map"><iframe id=mapa src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d183.37471712985032!2d-8.11223211070247!3d42.661451304478774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2fc749d5d34475%3A0x4ed8a7f2887fac9b!2sQuil%C3%B3metro%20Cero%20de%20Galicia!5e0!3m2!1ses!2ses!4v1606868576446!5m2!1ses!2ses"></iframe></div>
+                <div class="direccion">
+                    Cuidado En Casa<br>
+                    C/Virginia Henderson 37, Bajo<br>
+                    36500 - Lalin<br>
+                    Pontevedra - Galicia<br>
+                    España<br>
+                </div>
+            </address>
+            
+            <div class="redes-sociales">
+                <ul>
+                    <li><a href="https://es-es.facebook.com/"><img src="../StarUp/imagenes/logos/008-facebook.svg" alt="Logo facebook"></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="../StarUp/imagenes/logos/011-instagram.svg" alt="Logo instagram"></a></li>
+                    <li><a href="https://twitter.com/?lang=es"><img src="../StarUp/imagenes/logos/001-twitter.svg" alt="Logo twitter"></a></li>
+                    <li><a href="https://es.linkedin.com/"><img src="../StarUp/imagenes/logos/010-linkedin.svg" alt="Logo linkedin"></a></li>   
+                    <li><a href="https://www.whatsapp.com/"><img src="../StarUp/imagenes/logos/013-whatsapp.svg" alt="Logo whatsapp"></a></li>     
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

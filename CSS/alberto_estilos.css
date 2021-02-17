@@ -1,0 +1,764 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --colorTextos: #023047;
+    --colorBotones: #FFB703;
+    --colorFondo: #8ECAE6;
+    --paddingSecciones:60px 0;
+    --marginElementos:40px;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Nerko One', cursive; */
+    color: var(--colorTextos);
+    background-image: url(../imagenes/vector-sector-sanidad.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.contenedor{
+    /* background: #8ECAE6; */ /*lo uso para ver los contenedores*/
+    width: 90%;
+    max-width: 1100px;
+    margin:auto;
+    overflow: hidden;
+    padding: var(--paddingSecciones);
+}
+
+/* MENU */
+.menu-navegacion{
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    font-size: 20px;
+    font-family: 'Nerko One', cursive;
+}
+
+.logo{
+    height: 200px;
+    
+}
+.logo img{
+    display: block;
+    height: 100%;
+}
+
+.enlaces{
+    display: flex;
+    flex-wrap: wrap;
+    /* background: coral; */ /*lo uso para ver los contenedores*/
+}
+
+.enlaces li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px 0;
+    border: 2px solid;
+    border-radius: 10px;
+    background: var(--colorBotones);
+    color:var(--colorTextos)
+
+}
+
+.enlaces a{
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.enlaces a:hover{
+    text-decoration:underline;
+    color: var(--colorFondo);
+}
+
+/* Contenedor-principal */
+
+.contenedor-principal{
+align-items: center;
+justify-content: center;
+background-image: url(../imagenes/enfermera\ _con_señor_sentado_grande.jpg);
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+padding: 10px;
+}
+
+.texto-principal{
+    font-family: 'Nerko One', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.texto-principal h1{
+    font-size: 100px;
+    letter-spacing: 6px;
+    color: var(--colorTextos);
+    text-align: center;
+}
+.texto-principal h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--colorBotones);
+    letter-spacing: 6px;
+    
+}
+
+.texto-principal a{
+    padding: 5px 10px;
+    margin: 10px 0 10px 0;
+    /* color: var(--colorFondo); */ /*lo uso para ver los contenedores*/
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 10px;
+    background: var(--colorBotones);
+    color:var(--colorTextos);
+    font-size: 30px;
+    display: inline-block;
+    
+}
+
+.texto-principal a:hover{
+    text-decoration:underline;
+    color: var(--colorFondo);
+}
+
+.titulo-seccion{
+    text-align: center;
+    font-family: 'Nerko One', cursive;
+    font-size: 60px;
+    padding: 00px;
+    /* background: crimson; */ /*lo uso para ver los contenedores*/
+}
+
+/* slider desplazamiento automático */
+.galeria{
+    width: 90%;
+    max-width: 1100;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    /* background: coral; */ /*lo uso para ver los contenedores*/
+    display: flex;
+    align-items: center;
+}
+
+.slider ul{
+    display: flex;
+    height: auto;
+    padding: 0;
+    width: 400%; /*esto porque son cuatro imgenes se adaptaría al nº de imagenes*/
+    animation: cambio 20s infinite alternate; 
+    animation-timing-function: ease-in-out;
+}
+
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+
+.slider img {
+    width: 100%;    
+}
+
+/* Esto es para una galeria con un menu de selección */
+
+/* .galeria{
+    width: 90%;
+    max-width: 1100;
+    height: 800px;
+    margin: auto; */
+    /* background: coral; */
+/* } */ 
+
+/* .slider{
+    position: relative;
+    height: 500px;
+    justify-content: center;
+}
+.slider li{
+    position: absolute;
+    display: flex;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    height: 100%;
+    transition: opacity .5s;
+    list-style: none;
+    justify-content: center;
+    align-content: center;
+    border: solid 2px;
+}
+
+img {
+    max-width: 100%;
+    box-shadow: 10px 10px 20px 0 rgba(94,47,59,0.2);
+    object-fit: cover;
+}
+
+.slider li:first-child{
+    opacity: 1;
+}
+.slider li:target{
+    opacity: 1;
+} */
+/* .menu-navegacion-slider{
+    /* background: crimson; */
+    /* padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 20px;
+    font-family: 'Nerko One', cursive;
+} */ 
+
+/* Contenedor secundario Conócenos más */
+.contenedor-secundario{
+    /* background: chartreuse; */ /*lo uso para ver los contenedores*/
+    display: flex;
+    font-size: 20px;
+    width: 90%;
+    max-width: 1100px;
+    height: auto;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.texto-secundario1{
+    flex: 30%;
+    /* background: #8ECAE6; */ /*lo uso para ver los contenedores*/
+    height: auto;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 0 10px 0 10px;
+    box-shadow: 6px 6px 6px 6px  #343759;
+    padding: 10px;
+    display: flex;
+    font-weight:bold;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    text-align: justify;
+}
+
+.texto-secundario2{
+    flex: 30%;
+    /* background: #8ECAE6; */ /*lo uso para ver los contenedores*/
+    height: auto;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 0 10px 0 10px;
+    box-shadow: 6px 6px 6px 6px  #343759;
+    padding: 10px;
+    display: flex;
+    font-weight:bold;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    text-align: justify;
+}
+
+.texto-secundario3{
+    flex: 30%;
+    /* background: #8ECAE6; */ /*lo uso para ver los contenedores*/
+    height: auto;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 0 10px 0 10px;
+    box-shadow: 6px 6px 6px 6px  #343759;
+    padding: 10px;
+    font-weight:bold;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    text-align: justify;
+}
+
+.textos{
+    display: flex;
+    /* background: chocolate; */ /*lo uso para ver los contenedores*/
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.texto-secundario1:hover{
+    background: #FFB703;
+    transition: .3s all;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.texto-secundario2:hover{
+    background: #FFB703;
+    transition: .3s all;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.texto-secundario3:hover{
+    background: #FFB703;
+    transition: .3s all;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.texto-secundario1 a{
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    text-decoration: none;
+    border: 2px solid;
+    border-radius: 10px;
+    background: var(--colorBotones);
+    color:var(--colorTextos);
+    position: relative;
+}
+
+.texto-secundario2 a{
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    text-decoration: none;
+    border: 2px solid;
+    border-radius: 10px;
+    background: var(--colorBotones);
+    color:var(--colorTextos);
+    position: relative;
+}
+
+.texto-secundario3 a{
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    text-decoration: none;
+    border: 2px solid;
+    border-radius: 10px;
+    background: var(--colorBotones);
+    color:var(--colorTextos);
+    position: relative;
+}
+
+.texto-secundario1 a:hover{
+    color: var(--colorTextos);
+    background: #8ECAE6;
+}
+
+.texto-secundario2 a:hover{
+    color: var(--colorTextos);
+    background: #8ECAE6;
+}
+
+.texto-secundario3 a:hover{
+    color: var(--colorTextos);
+    background: #8ECAE6;
+}
+
+form{
+	width: 250px;
+	padding:16px;
+	border-radius:10px;
+	margin:auto;
+    background-color:#FFB703;
+    
+}
+
+form label{
+	width:72px;
+	font-weight:bold;
+    display:inline-block;
+    font-size: 15px;
+    text-align: left;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"]{
+	width:180px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+    display:inline-block;
+    font-size: 15px;
+}
+
+form input[type="submit"]{
+	width:100%;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+    background-color:var(--colorFondo);
+    font-weight: bold;
+} 
+
+form input[type="submit"]:hover{
+	cursor:pointer;
+}
+
+textarea{
+	width:100%;
+	height:100px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;			
+	margin:8px 0;
+	resize: vertical;
+	resize:none;
+	display:block;
+}
+
+/* Tienda */
+
+.contenedor-tienda{
+    /* background: chartreuse; */ /*lo uso para ver los contenedores*/
+    width: auto;
+    max-width: 1100px;
+    height: auto;    
+    margin: auto;
+    justify-content: space-around;
+    padding: 30px;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.tabla1{
+    display: flex;
+    flex: 200px;
+    justify-content: space-around;
+    height: 300px;
+    border: 2px solid;
+    border-radius: 300px;
+    margin: 0 10px 0 10px;
+    box-shadow: 6px 6px 6px 6px  #343759;
+    padding: 10px;
+    overflow: hidden;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.tabla2{
+    display: flex;
+    flex: 200px;
+    justify-content: space-around;
+    height: 300px;
+    border: 2px solid;
+    border-radius: 300px;
+    margin: 0 10px 0 10px;
+    box-shadow: 6px 6px 6px 6px  #343759;
+    padding: 10px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.tabla3{
+    display: flex;
+    flex: 200px;
+    justify-content: space-around;
+    height: 300px;
+    border: 2px solid;
+    border-radius: 300px;
+    margin: 0 10px 0 10px;
+    box-shadow: 6px 6px 6px 6px  #343759;
+    padding: 10px;
+    overflow: hidden;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.tabla1 img{
+    object-fit: cover;
+    width: auto;
+}
+
+.tabla2 img{
+    object-fit: cover;
+    width: auto;
+}
+
+.tabla3 img{
+    object-fit: cover;
+    width: auto;
+}
+
+.tabla1:hover{
+    transition: .3s all;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.tabla2:hover{
+    transition: .3s all;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.tabla3:hover{
+    transition: .3s all;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.pie-pagina{
+    display: flex;
+    align-items: center;
+    height: auto;
+    font-size: 20px;
+    font-family: 'Nerko One', cursive;
+    margin-bottom: 30px;
+    margin: auto;
+    /* background: #6b1b60; */ /*lo uso para ver los contenedores*/
+    flex-wrap: wrap;
+    height: auto;
+    background-image: url(../imagenes/enfermera\ _con_señor_sentado_grande.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+address{
+    display: flex;
+    /* background: chartreuse; */ /*lo uso para ver los contenedores*/
+    flex-wrap: wrap;
+    margin: auto;
+    align-items: center;
+}
+
+
+.direccion{
+    color:#6b1b60;
+    height: auto;
+    display: inline-block;
+    font-weight: bold;
+    text-align: justify;
+    letter-spacing: 2px;
+    /* background:chocolate; */ /*lo uso para ver los contenedores*/
+    display: flex;
+    margin: auto;
+}
+
+.map{
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+#mapa{
+    width: 300px;
+    height: 180px;
+    border: 3px solid #000;
+    margin: auto;
+
+}
+.redes-sociales{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    /* background: coral; */ /*lo uso para ver los contenedores*/
+}
+
+.redes-sociales li{
+    list-style: none;
+    display: inline-block;
+}
+
+.redes-sociales li a img{
+    width: 50px;
+}
+
+/* Esto me sirve para hacer la transición, 20 segundos la primera imagen, luego 5 segundos de transición y otros 20 segundos para la segunda imagen */
+@keyframes cambio{
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+/* Esta sería la parte de codigo para conseguir la adaptabilidad de web */
+
+@media screen and (max-width:1040px) {
+
+    .contenedor-secundario{
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .texto-secundario1{
+        width: auto;
+        margin: 10px;
+    }
+
+    .texto-secundario2{
+        width: auto;
+        margin: 10px;
+    }
+
+    .texto-secundario3{
+        width: auto;
+        margin: 10px;
+    }
+
+    form{
+        width: 350px;
+    }
+}
+
+@media screen and (max-width:856px) {
+
+    .menu-navegacion{
+        height: auto;
+    }
+
+    .enlaces li{
+        font-size: 80%;
+        display: flex;
+    }
+
+    .texto-principal h1{
+        font-size: 60px;
+    }
+
+    .contenedor-secundario{
+        font-size: 20px;
+        flex-direction: column;
+    }
+
+    .texto-secundario1{
+        width: auto;
+        margin: 10px;
+    }
+
+    .texto-secundario2{
+        width: auto;
+        margin: 10px;
+    }
+
+    .texto-secundario3{
+        width: auto;
+        margin: 10px;
+    }
+
+    
+    form{
+        width: 350px;
+    }
+
+    .titulo-seccion{
+        font-size: 50px;
+    }
+
+    .contenedor-tienda{
+        flex-direction: column;
+        align-items: center;
+    } 
+
+    .tabla1, .tabla2, .tabla3{
+        width: 300px;
+        margin: 10px;
+    }
+
+    .redes-sociales li a img{
+        width: 50px;
+    }
+
+}  
+
+@media screen and (max-width:500px) {
+
+    .menu-navegacion{
+        height: auto;
+    }
+
+    .enlaces li{
+        font-size: 60%;
+        display: flex;
+    }
+
+    .logo{
+        height: 100px;
+    }
+
+    .texto-principal h1{
+        font-size: 40px;
+    }
+
+    .texto-principal h2{
+        font-size: 30px;
+    }
+        
+    .texto-principal a{
+        font-size: 15px;
+    }
+
+    .contenedor-secundario{
+        font-size: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-secundario1, .texto-secundario2, .texto-secundario3{
+        width: 300px; 
+    }
+
+    form{
+        width: 250px;
+    }
+
+    .titulo-seccion{
+        font-size: 40px;
+    }
+
+    .tabla1, .tabla2, .tabla3{
+        width: 80%;
+    }
+
+}
+@media screen and (max-width:400px) {
+
+    .contenedor-secundario{
+        padding: 20px 0px 20px 0px;
+    }
+
+    .texto-secundario1, .texto-secundario2, .texto-secundario3{
+        width: 220px;
+        
+    }
+
+    form{
+        width: 200px;
+    }
+
+    .direccion{
+        font-size: 70%;
+    }
+    
+    #mapa{
+        width: 220px;
+    }
+
+    .redes-sociales li a img{
+        width: 40px;
+    }
+}
