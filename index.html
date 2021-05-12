@@ -7,25 +7,34 @@
     <link rel="stylesheet" href="../StarUp/CSS/alberto_estilos.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,600;1,400&family=Nerko+One&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Cuidado en Casa</title>
 </head>
 <body>
     <!-- Estableczo un header en donde introducco el logo y el menu con los botones de acceso a las distintas páginas del sitio. -->
-    <header>
-        <nav class="menu-navegacion contenedor">
+    <header class="contenedor-principal contenedor">
+        <nav id="menu">
             <div class="logo">
                 <img src="../StarUp/imagenes/logos/logo mediano.png" alt="Logo Empresa">
             </div>
-            <div class="enlaces">
+            
                 <ul>
                     <li> <a href="https://proyectocuidar.com/quienes-somos/">Quienes Somos</a></li>
-                    <li> <a href="#servicios">Servicios</a></li>
-                    <li> <a href="#productos">Productos</a></li>
+                    <!--Utilizando la librería de Jquery, introduzco un efecto en el menú para que muestre al pasar por encima de la opción de menú, 
+                    los submenus asociados a este.-->
+                    <li><a href="#">Nuestros servicios</a>
+                        <ul>
+                            <li> <a href="#servicios">Servicios</a></li>
+                            <li> <a href="#productos">Productos</a></li>
+                        </ul>  
+                    </li> 
                     <li> <a href="https://proyectocuidar.com/avisolegal_2/">Política Privacidad</a></li>
                     <li> <a href="https://unenfermerocurioso.wordpress.com/">Blog</a></li>
                     <li> <a href="#contacto">Contacto</a></li>
                 </ul>
-            </div>
+            
+            
         </nav>
     </header>
     <main>
@@ -46,26 +55,39 @@
         para que la gente pueda solicitar nuestros servicios. -->
         <section>
         <h2 class="titulo-seccion">Nuestros Servicios</h2>
-        <div class="contenedor galeria">
+        <!--Guiandome por un ejemplo he realizado este slider con un efecto de transición y con javascript para cambiar de imagen.
+        Se puede cambiar con los botnes de next y prev o con un menú inferior que permite seleccionar que imagen queremos ver.-->
+        <div class="slideshow-container">
             <a id="servicios"></a>
-            <div class="slider"> 
-                <ul>
-                    <li id=slide1><img src="../StarUp/imagenes/female-nurse-elbow-touching-old-man-during-pandemic.jpg" alt="Fotos de nuestros servicios"></li>
-                    <li id=slide2><img src="../StarUp/imagenes/doctor-measures-the-blood-sugar-level-of-the-patient.jpg" alt="Fotos de nuestros servicios"></li>
-                    <li id=slide3><img src="../StarUp/imagenes/nurse-and-senior-woman-during-check-up-at-nursing-home.jpg" alt="Fotos de nuestros servicios"></li>
-                    <li id=slide4><img src="../StarUp/imagenes/close-up-of-doctor-s-hand-wearing-blue-gloves-giving-syringe-on-patient-s-arm.jpg" alt="Fotos de nuestros servicios"></li>
-                </ul>
-            </div>
-            <!--Esta parte sería para establecer un menu y pasar las imagenes con otro tipo de slider-->
-            <!-- <nav class="slider-nav">
-                <nav class="menu-navegacion-slider">
-                    <div class="enlaces">
-                        <li><a href="#slide1">1</a></li>
-                        <li><a href="#slide2">2</a></li>
-                        <li><a href="#slide3">3</a></li>
-                    </div>
-                </nav>
-            </nav>                          -->
+            <div class="mySlides fade"> 
+                <div class="numbertext">1/4</div>
+                <img src="../StarUp/imagenes/female-nurse-elbow-touching-old-man-during-pandemic.jpg" alt="Fotos de nuestros servicios" style="width:100%">
+                <!-- me serviría para incluir un mensaje en la fotografía. <div class="text">Caption Text</div>   -->
+            </div> 
+            <div class="mySlides fade"> 
+                <div class="numbertext">2/4</div>
+                <img src="../StarUp/imagenes/doctor-measures-the-blood-sugar-level-of-the-patient.jpg" alt="Fotos de nuestros servicios" style="width:100%">
+                <!-- me serviría para incluir un mensaje en la fotografía. <div class="text">Caption two</div>   -->
+            </div> 
+            <div class="mySlides fade"> 
+                <div class="numbertext">3/4</div>
+                <img src="../StarUp/imagenes/nurse-and-senior-woman-during-check-up-at-nursing-home.jpg" alt="Fotos de nuestros servicios" style="width:100%">
+                <!-- me serviría para incluir un mensaje en la fotografía. <div class="text">Caption three</div>   -->
+            </div> 
+            <div class="mySlides fade"> 
+                <div class="numbertext">4/4</div>
+                <img src="../StarUp/imagenes/close-up-of-doctor-s-hand-wearing-blue-gloves-giving-syringe-on-patient-s-arm.jpg" alt="Fotos de nuestros servicios" style="width:100%">
+                <!-- me serviría para incluir un mensaje en la fotografía. <div class="text">Caption four</div>   -->
+            </div>  
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>    
+        </div>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
         </div>
         <!-- resumen de nuestros servicios, anuncio de nuestro servicio 24 hras y CTA para contatar y consultarnos.-->
             <div class="contenedor contenedor-secundario">
@@ -87,21 +109,25 @@
                         <h2>Contacto</h2>
                         <p>Contactaremos en menos de 24 hrs.</p>
                     </div>  
+                    <!--Formulario con validación de datos con HTML5 y Javascript, mediante funciones.-->
                     <div class="formulario">   
-                        <form action="#" target="#" method="post" name="formDatosPersonales">
+                        <form name="formDatosPersonales">
                             <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre"/>
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,30}" required/>
                             <label for="apellidos">Apellidos</label>
-                            <input type="text" name="apellidos" id="apellidos" placeholder="1r Apellido"/>
+                            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,60}" required/>
                             <label for="telefono" >Telf.</label>
-                            <input type="tel" name="telefono" id="telefono" placeholder="Teléfono" required />
+                            <input type="tel" name="telefono" id="telefono" placeholder="Teléfono 658789456" pattern="^[9|8|7|6]\d{8}$" required/>
                             <label for="email" >Email</label>
-                            <input type="email" name="email" id="email" placeholder="Email" required />
+                            <input type="text" name="email" id="email" placeholder="email@dominio.com" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required/>
                             <label for="asunto">Asunto</label>
-                            <input type ="text" name="asunto" id="asunto" placeholder="Motivo de la consulta" required />
+                            <input type ="text" name="asunto" id="asunto" placeholder="Motivo de la consulta" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,60}" required/>
                             <label for="mensaje">Mensaje</label>
-                            <textarea name="mensaje" id="mensaje" placeholder="Describe brevemente en menos de 300 carácteres" maxlength="300" required ></textarea>
-                            <input type="submit" name="enviar" value="ENVIAR DATOS"/>
+                            <textarea name="mensaje" id="mensaje" placeholder="Describe brevemente en menos de 300 carácteres" maxlength="300" required></textarea>
+                            <div>
+                                <p id="mensajeError"></p>
+                            </div>
+                            <input type="submit" name="enviar" id="enviar" value="ENVIAR DATOS"/>
                         </form>
                     </div> 
                 </div>
@@ -112,15 +138,70 @@
         <section class="contenedor">
             <a id="productos"></a>
             <h2 class="titulo-seccion">Productos Destacados</h2>
-            <div class="contenedor-tienda">
-                <div class="tabla1">
-                    <a href="https://www.quirumed.com/es/tensiometro-omron-m2-basic-hem-7121j-e.html?sid=84013"><img src="../StarUp/imagenes/digital-automatic-blood-pressure-monitor-on-white.jpg" alt="Tensiometro"></a>
+            <div class="grid contenedor">
+                <div class="productos-lista">
+                    <a class="productos-titulo" href="//www.quirumed.com/">Tensiómetro</a>
+                    <div class="productos-imagen">
+                        <a href="#"><img width="300" height="169"
+                                src="../StarUp/imagenes/digital-blood-pressure-monitor-on-table.jpg"
+                                alt="Botiquín primeros auxilios"></a>
+                    </div>
                 </div>
-                <div class="tabla2">
-                    <a href="https://www.quirumed.com/es/botiquin-maletin-m-1.html?sid=51050"><img src="../StarUp/imagenes/first-aid-kit-on-white-table-full-set-of-emergency-medicine-medication-for-giving-first-aid-to-sick-or-injured-person-on-white-background.jpg" alt="Botiquín primeros auxilios"></a>
+                <div class="productos-lista">
+                    <a class="productos-titulo" href="//www.quirumed.com/">Botiquin</a>
+                    <div class="productos-imagen">
+                        <a href="#"><img width="300" height="169"
+                                src="../StarUp/imagenes/first-aid-kit-on-white-table-full-set-of-emergency-medicine-medication-for-giving-first-aid-to-sick-or-injured-person-on-white-background.jpg"
+                                alt="Botiquín primeros auxilios"></a>
+                    </div>
                 </div>
-                <div class="tabla3">
-                    <a href="https://www.quirumed.com/es/covid-19"><img src="../StarUp/imagenes/anti-virus-recorte-protection-kit-on-blue-background-mask-rubber-gloves-hand-sanitizer-bottles-antiseptic-gel.jpg" alt="Kit basico Covid-19"></a>
+                <div class="productos-lista">
+                    <a class="productos-titulo" href="//www.quirumed.com/">Termómetro</a>
+                    <div class="productos-imagen">
+                        <a href="#"><img width="300" height="169"
+                                src="../StarUp/imagenes/hand-held-thermometer-to-measure-fever-and-free-space.jpg"
+                                alt="Botiquín primeros auxilios"></a>
+                    </div>
+                </div>
+                <div class="productos-lista">
+                    <a class="productos-titulo" href="//www.quirumed.com/">Glucómetro</a>
+                    <div class="productos-imagen">
+                        <a href="#"><img width="300" height="169"
+                                src="../StarUp/imagenes/hand-holding-glucometer-with-blood-sugar-test-result-womans-hand-showing-sugar-test-on-white-background-with-copy-space.jpg"
+                                alt="Botiquín primeros auxilios"></a>
+                    </div>
+                </div>
+                <div class="productos-lista">
+                    <a class="productos-titulo" href="//www.quirumed.com/">Apósitos</a>
+                    <div class="productos-imagen">
+                        <a href="#"><img width="300" height="169"
+                                src="../StarUp/imagenes/wound-care-dressing-set-and-stainless-steel-basin-forceps-alcohol-bottle-normal-saline-cohesive-elastic-bandage-conforming-bandage-container-for-surgical.jpg"
+                                alt="Botiquín primeros auxilios"></a>
+                    </div>
+                </div>
+                <div class="productos-lista">
+                    <a class="productos-titulo" href="//www.quirumed.com/">Protección solar</a>
+                    <div class="productos-imagen">
+                        <a href="#"><img width="300" height="169"
+                                src="../StarUp/imagenes/sunscreens-with-starfish-and-seashells-on-clear-sea-sand-summer-vacation.jpg"
+                                alt="Botiquín primeros auxilios"></a>
+                    </div>
+                </div>
+                <div class="productos-lista">
+                    <a class="productos-titulo" href="//www.quirumed.com/">Ortopedias</a>
+                    <div class="productos-imagen">
+                        <a href="#"><img width="300" height="169"
+                                src="../StarUp/imagenes/close-up-professional-wheelchair-indoors.jpg"
+                                alt="Botiquín primeros auxilios"></a>
+                    </div>
+                </div>
+                <div class="productos-lista">
+                    <a class="productos-titulo" href="//www.quirumed.com/">Pack Covid</a>
+                    <div class="productos-imagen">
+                        <a href="#"><img width="300" height="169"
+                                src="../StarUp/imagenes/600anti-virus-recorte-protection-kit-on-blue-background-mask-rubber-gloves-hand-sanitizer-bottles-antiseptic-gel.jpg"
+                                alt="Botiquín primeros auxilios"></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -150,5 +231,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/alberto_js.js"></script>
+    <script src="js/validacion.js"></script>
 </body>
 </html>

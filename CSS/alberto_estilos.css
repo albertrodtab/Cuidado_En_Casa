@@ -51,45 +51,69 @@ body{
     height: 100%;
 }
 
-.enlaces{
-    display: flex;
-    flex-wrap: wrap;
-    /* background: coral; */ /*lo uso para ver los contenedores*/
-}
+/*formato para el menú de navegación de la página. */
 
-.enlaces li{
+#menu {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    font-size: 20px;
+    font-family: 'Nerko One', cursive;
+}
+#menu>ul>li {
     list-style: none;
     display: inline-block;
     padding: 10px 0;
     border: 2px solid;
     border-radius: 10px;
     background: var(--colorBotones);
-    color:var(--colorTextos)
-
+    color:var(--colorTextos);
+    position: relative;
 }
 
-.enlaces a{
+#menu>ul>li a {
     margin-left: 10px;
     margin-right: 10px;
     text-decoration: none;
     text-align: center;
 }
+#menu>ul>li>ul {
+    display: none;
+    
+}
+#menu>ul>li>ul>li {
+    position: relative;
+    background: var(--colorFondo);
+    color: var(--colorBotones);
+    padding: 10px 0;
+    border: 2px solid;
+    border-radius: 10px;
+}
+#menu>ul>li>ul>li a{
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: underline;
+    text-align: center;
+}
 
-.enlaces a:hover{
-    text-decoration:underline;
-    color: var(--colorFondo);
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* Contenedor-principal */
 
 .contenedor-principal{
-align-items: center;
-justify-content: center;
-background-image: url(../imagenes/enfermera\ _con_señor_sentado_grande.jpg);
-background-position: center;
-background-size: cover;
-background-attachment: fixed;
-padding: 10px;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../imagenes/enfermera\ _con_señor_sentado_grande.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 10px;
 }
 
 .texto-principal{
@@ -99,6 +123,7 @@ padding: 10px;
     align-items: center;
     justify-content: center;
     text-align: center;
+    
 }
 
 .texto-principal h1{
@@ -106,7 +131,10 @@ padding: 10px;
     letter-spacing: 6px;
     color: var(--colorTextos);
     text-align: center;
+    animation-duration: 1s;
+    animation-name: slidein;
 }
+
 .texto-principal h2{
     font-size: 40px;
     margin-bottom: 20px;
@@ -143,87 +171,79 @@ padding: 10px;
     /* background: crimson; */ /*lo uso para ver los contenedores*/
 }
 
-/* slider desplazamiento automático */
-.galeria{
-    width: 90%;
-    max-width: 1100;
-    height: auto;
-    margin: auto;
-    overflow: hidden;
-    /* background: coral; */ /*lo uso para ver los contenedores*/
-    display: flex;
-    align-items: center;
-}
-
-.slider ul{
-    display: flex;
-    height: auto;
-    padding: 0;
-    width: 400%; /*esto porque son cuatro imgenes se adaptaría al nº de imagenes*/
-    animation: cambio 20s infinite alternate; 
-    animation-timing-function: ease-in-out;
-}
-
-.slider li{
-    width: 100%;
-    list-style: none;
-}
-
-.slider img {
-    width: 100%;    
-}
-
-/* Esto es para una galeria con un menu de selección */
-
-/* .galeria{
-    width: 90%;
-    max-width: 1100;
-    height: 800px;
-    margin: auto; */
-    /* background: coral; */
-/* } */ 
-
-/* .slider{
+/* Formato para la Galeria con javascript */
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
     position: relative;
-    height: 500px;
-    justify-content: center;
+    margin: auto;
 }
-.slider li{
+
+/* Esconde las imagenes por defecto */
+    .mySlides {
+    display: none;
+}
+
+/* configuramos los botones de previa y siguiente */
+.prev, .next {
+    cursor: pointer;
     position: absolute;
-    display: flex;
-    left: 0px;
-    top: 0px;
-    opacity: 0;
-    height: 100%;
-    transition: opacity .5s;
-    list-style: none;
-    justify-content: center;
-    align-content: center;
-    border: solid 2px;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
 }
 
-img {
-    max-width: 100%;
-    box-shadow: 10px 10px 20px 0 rgba(94,47,59,0.2);
-    object-fit: cover;
+/* colocamos el botón de next a la derecha */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-.slider li:first-child{
-    opacity: 1;
+/* Cuando pasamos el ratón hacemos que el fondo del boton cambie de color */
+.prev:hover, .next:hover {
+    background-color: #ec0b0b83;
 }
-.slider li:target{
-    opacity: 1;
-} */
-/* .menu-navegacion-slider{
-    /* background: crimson; */
-    /* padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    font-size: 20px;
-    font-family: 'Nerko One', cursive;
-} */ 
+
+/* Formato del numero de imagen*/
+.numbertext {
+    background: #ec0b0b83;
+    color: #fff;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Formato del menu de selección de imagenes */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #ec0b0b83;
+}
+
+/* animación de sombreado para el cambio */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 3.5s;
+    animation-name: fade;
+    animation-duration: 6.5s;
+}
 
 /* Contenedor secundario Conócenos más */
 .contenedor-secundario{
@@ -426,93 +446,64 @@ textarea{
 
 /* Tienda */
 
-.contenedor-tienda{
-    /* background: chartreuse; */ /*lo uso para ver los contenedores*/
-    width: auto;
-    max-width: 1100px;
-    height: auto;    
-    margin: auto;
-    justify-content: space-around;
-    padding: 30px;
-    display:flex;
-    flex-wrap: wrap;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-content: center;
+    column-gap: 5px;
+    row-gap: 5px;
 }
 
-.tabla1{
-    display: flex;
-    flex: 200px;
-    justify-content: space-around;
-    height: 300px;
-    border: 2px solid;
-    border-radius: 300px;
-    margin: 0 10px 0 10px;
-    box-shadow: 6px 6px 6px 6px  #343759;
-    padding: 10px;
+/* Efectos y estilos aplicados con CSS al grid de productos */
+.productos-lista {
+    position: relative;
+}
+
+.productos-imagen {
+    line-height: 0;
     overflow: hidden;
-    align-items: center;
-    flex-grow: 1;
+    align-self: center;
+    justify-self: center;
+    
 }
 
-.tabla2{
+.productos-imagen img {
+    filter: blur(0px);
+    transition: filter 0.3s ease-in;
+    transform: scale(1.1);
+}
+
+.productos-titulo {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    background: #ffb8037e;
+    color: white;
+    
+    /* posiciona el texto en el medio*/
     display: flex;
-    flex: 200px;
-    justify-content: space-around;
-    height: 300px;
-    border: 2px solid;
-    border-radius: 300px;
-    margin: 0 10px 0 10px;
-    box-shadow: 6px 6px 6px 6px  #343759;
-    padding: 10px;
-    overflow: hidden;
     align-items: center;
+    justify-content: center;
 }
 
-.tabla3{
-    display: flex;
-    flex: 200px;
-    justify-content: space-around;
-    height: 300px;
-    border: 2px solid;
-    border-radius: 300px;
-    margin: 0 10px 0 10px;
-    box-shadow: 6px 6px 6px 6px  #343759;
-    padding: 10px;
-    overflow: hidden;
-    align-items: center;
-    flex-grow: 1;
+.productos-lista:hover .productos-titulo {
+    opacity: 1;
+    
 }
 
-.tabla1 img{
-    object-fit: cover;
-    width: auto;
-}
+.productos-lista:hover .productos-imagen img {
+    filter: blur(2px);
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
 
-.tabla2 img{
-    object-fit: cover;
-    width: auto;
-}
-
-.tabla3 img{
-    object-fit: cover;
-    width: auto;
-}
-
-.tabla1:hover{
-    transition: .3s all;
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.tabla2:hover{
-    transition: .3s all;
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.tabla3:hover{
-    transition: .3s all;
-    transform: scale(1.1);
-    cursor: pointer;
 }
 
 .pie-pagina{
@@ -581,19 +572,43 @@ address{
     width: 50px;
 }
 
-/* Esto me sirve para hacer la transición, 20 segundos la primera imagen, luego 5 segundos de transición y otros 20 segundos para la segunda imagen */
-@keyframes cambio{
-    0% {margin-left: 0;}
-    20% {margin-left: 0;}
+/* Efecto de animación para el texto y botones del contenedor principal */
+@keyframes slidein {
+    from {
+    margin-top: 100%;
+    width: auto;
+    }
 
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
+    to {
+    margin-bottom: 0%;
+    width: 100%;
+    }
+}
 
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
+/*Hace temblar las imagenes*/
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
 
-    75% {margin-left: -300%;}
-    100% {margin-left: -300%;}
+/* comfiguro el efecto de opacidad que quiero en el slider*/
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .1} 
+    to {opacity: 1}
 }
 
 /* Esta sería la parte de codigo para conseguir la adaptabilidad de web */
